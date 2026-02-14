@@ -50,10 +50,15 @@ def predict_salary(
     X = pd.DataFrame(0, index=[0], columns=feature_columns)
 
     # Encode categorical
-    X["role"] = role_encoder.transform(df["role"])[0]
-    X["location"] = location_encoder.transform(df["location"])[0]
-    X["work_mode"] = work_mode_encoder.transform(df["work_mode"])[0]
-    X["employment_type"] = employment_encoder.transform(df["employment_type"])[0]
+    role = role.title()
+    location = location.title()
+    work_mode = work_mode.title()
+    employment_type = employment_type.title()
+
+    X["role"] = role_encoder.transform([role])[0]
+    X["location"] = location_encoder.transform([location])[0]
+    X["work_mode"] = work_mode_encoder.transform([work_mode])[0]
+    X["employment_type"] = employment_encoder.transform([employment_type])[0]
 
     # Numeric
     X["experience_years"] = df["experience_years"][0]

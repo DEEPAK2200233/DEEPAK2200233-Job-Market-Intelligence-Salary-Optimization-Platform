@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 fastapi
 uvicorn
 pandas
@@ -6,3 +7,13 @@ scikit-learn
 joblib
 psycopg2-binary
 sqlalchemy
+=======
+fastapi
+uvicorn
+pandas
+numpy
+scikit-learn
+joblib
+psycopg2-binary
+sqlalchemy
+>>>>>>> b715743 (Added trained model files)
