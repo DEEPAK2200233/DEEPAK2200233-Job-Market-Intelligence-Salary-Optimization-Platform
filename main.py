@@ -51,7 +51,8 @@ def predict_salary(
 
     # Encode categorical
     def normalize(text):
-        return text.strip().lower().capitalize()
+        return " ".join(word.capitalize() for word in text.strip().lower().split())
+
 
     role = normalize(role)
     location = normalize(location)
