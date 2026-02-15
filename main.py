@@ -50,10 +50,13 @@ def predict_salary(
     X = pd.DataFrame(0, index=[0], columns=feature_columns)
 
     # Encode categorical
-    role = role.title()
-    location = location.title()
-    work_mode = work_mode.title()
-    employment_type = employment_type.title()
+    def normalize(text):
+        return text.strip().lower().capitalize()
+
+    role = normalize(role)
+    location = normalize(location)
+    work_mode = normalize(work_mode)
+    employment_type = normalize(employment_type)
 
     X["role"] = role_encoder.transform([role])[0]
     X["location"] = location_encoder.transform([location])[0]
